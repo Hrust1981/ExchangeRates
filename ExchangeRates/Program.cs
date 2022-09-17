@@ -7,14 +7,15 @@ namespace ExchangeRates
 {
     class Program
     {
-        private static ITelegramBotClient botClient;
+        private static ITelegramBotClient? botClient;
         private static GetRequest? request;
-        private static XmlGetData getData;
-        private static InlineKeyboardMarkup inlineKeyboard;
-        private static List<Currency> currencies;
-        private static List<string> currenciesList;
+        private static XmlGetData? getData;
+        private static InlineKeyboardMarkup? inlineKeyboard;
+        private static List<Currency>? currencies;
+        private static List<string>? currenciesList;
         private static string? date;
 
+        [Obsolete]
         static void Main(string[] args)
         {
             botClient = new TelegramBotClient(Settings.TOKEN);
@@ -49,10 +50,11 @@ namespace ExchangeRates
             Console.ReadKey();
         }
 
+        [Obsolete]
         private async static void BotClient_OnCallbackQuery(object? sender, CallbackQueryEventArgs e)
         {
-            InlineKeyboardMarkup iKCurrencyChoise = null;
-            string exRate = null, ticker = null, text = null;
+            InlineKeyboardMarkup? iKCurrencyChoise = null;
+            string? exRate = null, ticker = null, text = null;
 
             date = DateTime.Today.ToString("dd/MM/yyyy");
 
@@ -101,6 +103,7 @@ namespace ExchangeRates
             ).ConfigureAwait(false);
         }
 
+        [Obsolete]
         private static async void Bot_OnMessage(object sender, MessageEventArgs e)
         {
             var message = e?.Message?.Text;

@@ -9,10 +9,7 @@ namespace GetRequestCBRF
 
         public string Response { get; set; }
 
-        public GetRequest(string address)
-        {
-            _address = address;
-        }
+        public GetRequest(string address) => _address = address;
 
         public void Run()
         {

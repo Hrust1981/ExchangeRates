@@ -10,7 +10,7 @@
 
         public string Run(string ticker)
         {
-            string list = null;
+            string? list = null;
 
             if (ticker != null && _currencyList != null)
             {

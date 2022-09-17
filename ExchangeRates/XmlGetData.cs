@@ -5,15 +5,12 @@ namespace ExchangeRates
     public class XmlGetData
     {
         static XmlDocument _xDoc = new XmlDocument();
-        XmlElement _xRoot;
+        XmlElement? _xRoot;
         List<Currency> currencyList = new List<Currency>();
 
-        string _response, ticker, value, date;
+        string? _response, ticker, value, date;
 
-        public XmlGetData(string response)
-        {
-            _response = response;
-        }
+        public XmlGetData(string response) => _response = response;
 
         public string GetDate()
         {
